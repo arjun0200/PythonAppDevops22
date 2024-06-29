@@ -6,6 +6,7 @@ agent{
   stages{
     stage("Deployment on PROD Env"){
       steps{
+        sh "docker rm -f webos"
         sh "docker run -dit --name webos -p 80:80 jinny1/gfg22cicd"
       }
     }
